@@ -1,10 +1,14 @@
-import { Button } from "@/components/ui/button";
-import Header from '@/components/header';
+// pages/index.tsx
+import Header from "@/components/header";
+import MainContent from "@/components/MainContent"; // Import MainContent component
+
 export default function Home() {
   return (
     <div>
-        <Header />
-      
+      <Header />
+      <main >
+        <MainContent /> {/* Render MainContent below the Header */}
+      </main>
     </div>
   );
 }
