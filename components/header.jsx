@@ -7,7 +7,7 @@ const header = () => {
     <nav className= "mx-auto py-14 px-16 w-auto h-[98px] bg-[#6669FE] flex justify-between">
   <Link href={"/"}  className="flex items-center">
   <Image
-  src="/logo.png"
+  src="/logo.svg"
 width={96.6}
 height={49.03}
 top={24}
