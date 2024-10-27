@@ -1,13 +1,13 @@
-// components/classSchedule/ClassSchedule.types.ts
-
 export interface ClassScheduleItem {
-    id: number;
-    title: string;
-    date: string;
-    time: string;
-  }
-  
-  export interface ClassScheduleProps {
-    classSchedules: ClassScheduleItem[];
-  }
-  
+  id: number;
+  title: string;
+  subject: string;
+  date: string;
+  time: string;
+  icon: string;            // Add icon property here
+  rightText: string;
+  bgColor: string;
+  textColor: string;
+  dateTimeColor: string;
+  rightTextColor: string;
+}

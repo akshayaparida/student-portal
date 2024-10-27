@@ -10,7 +10,6 @@ const ClassSchedule = () => {
       subject: "Science",
       date: "Tuesday",
       time: "5:00 - 5:50 PM",
-      logo: "/path/to/logo1.svg", // Path to your logo
       rightText: "Yesterday",
       bgColor: "#F2F2FF",  // Custom background color
       textColor: "#9899DF", // Custom text color for first line
@@ -24,7 +23,6 @@ const ClassSchedule = () => {
       subject: "Science",
       date: "Tuesday",
       time: "6:00 - 7:15 PM",
-      logo: "/path/to/logo2.svg", // Path to your logo
       rightText: "Today",
       bgColor: "#E66DFF",  
       textColor: "#FFFFFF", // Custom text color for first line
@@ -38,7 +36,6 @@ const ClassSchedule = () => {
       subject: "Science",
       date: "Tuesday",
       time: "5:00 - 5:50 PM",
-      logo: "/path/to/logo3.svg", // Path to your logo
       rightText: "Tomorrow",
       bgColor: "#F2F2FF",  // Custom background color
       textColor: "#9899DF", // Custom text color for first line
@@ -52,7 +49,6 @@ const ClassSchedule = () => {
       subject: "Science",
       date: "Tuesday",
       time: "5:00 - 5:50 AM",
-      logo: "/path/to/logo4.svg", // Path to your logo
       rightText: "23rd Sept. 2024",
       bgColor: "#FDF5FF",  // Custom background color
       textColor: "#EFABFD", // Custom text color for first line
