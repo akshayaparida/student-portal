@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const header = () => {
   return (
-    <nav className= "mx-auto py-14 px-16 w-auto h-[98px] bg-[#6669FE] flex justify-between">
+    <nav className= "mx-auto py-14 px-16 w-auto h-[98px] bg-[#6669FE] flex justify-between font-outfit">
   <Link href={"/"}  className="flex items-center">
   <Image
   src="/logo.svg"

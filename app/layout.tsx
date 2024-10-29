@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {/* Header*/}
         <header/>
-        <main className="w-auto h-[792px] relative   bg-[#F9F9FF]">
+        <main className=" h-[792px] relative   bg-[#F9F9FF]">
           {children}
         </main>
       </body>

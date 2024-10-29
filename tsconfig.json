@@ -28,6 +28,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
+    "components/ui/**/*.tsx",  // Adjusted path to include all .tsx files in ui folder
     "components/shadcn-ui.d.ts"
   ],
   "exclude": ["node_modules"]

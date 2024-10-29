@@ -125,7 +125,7 @@ const QuickLinks = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Quick Links</h2>
+      <h2 className="font-outfit text-2xl font-bold text-black mb-8 w-[170px] h-[17px] rounded-[8px]   ">Quick Links</h2>
       <div className="grid grid-cols-1 gap-4">
         {links.map((link) => (
           <div
