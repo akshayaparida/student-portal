@@ -1,14 +1,14 @@
-import {Inter} from 'next/font/google'
+// app/layout.tsx
+import { Inter } from 'next/font/google';
 import "./globals.css";
-
-
+import Header from "@/components/header"; // Import your Header component
 
 export const metadata = {
   title: "ConnectED",
   description: "Student Portal app",
 };
 
-const inter = Inter ({subsets:["latin"]});
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -18,12 +18,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* You can add more meta tags or links here if needed */}
+        {/* Additional meta tags can be added here */}
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
-        {/* Header*/}
-        <header/>
-        <main className=" h-[792px] relative   bg-[#F9F9FF]">
+        {/* Header Component */}
+        <Header />
+        <main className="h-[792px] relative bg-[#F9F9FF]">
           {children}
         </main>
       </body>

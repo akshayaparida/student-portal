@@ -2,13 +2,14 @@
 "use client";
 
 import { FC } from "react";
+import Image from 'next/image';
 
 const Announcements: FC = () => {
   return (
     <div>
       {/* Header for Announcements */}
       <h2
-        className="font-outfit text-2xl font-bold text-black mb-8 w-[179px] h-[17px] rounded-[8px]   "
+        className="font-outfit text-2xl font-bold text-black mb-8 w-[179px] h-[17px] rounded-[8px]"
       >
         Announcements
       </h2>
@@ -17,11 +18,13 @@ const Announcements: FC = () => {
       <div className="bg-white border border-[#6669FE1A] rounded-[20px] w-[395px] h-[144px] p-4 flex flex-col gap-3">
         
         {/* Announcement item */}
-        <div className="flex items-start bg-gray-100 rounded-lg overflow-hidden   p-[9px_39px_8px_16px]     " >
+        <div className="flex items-start bg-gray-100 rounded-lg overflow-hidden p-[9px_39px_8px_16px]">
           {/* Icon */}
-          <img
+          <Image
             src="/sun.svg"
             alt="Sun icon representing Independence Day announcement"
+            width={20}
+            height={20}
             className="h-5 w-5 mt-1 mr-2"
           />
           {/* Text */}
@@ -31,11 +34,13 @@ const Announcements: FC = () => {
         </div>
 
         {/* Another announcement item */}
-        <div className="flex items-start bg-gray-100 rounded-lg overflow-hidden  p-[9px_39px_8px_16px]    " >
+        <div className="flex items-start bg-gray-100 rounded-lg overflow-hidden p-[9px_39px_8px_16px]">
           {/* Icon */}
-          <img
+          <Image
             src="/clipboard-text.svg"
             alt="Clipboard icon representing assignment reminder"
+            width={20}
+            height={20}
             className="h-5 w-5 mt-1 mr-2"
           />
           {/* Text */}

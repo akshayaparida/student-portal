@@ -1,40 +1,60 @@
-// components/MainContent.tsx
-
 import Announcements from "@/components/announcements/Announcements";
 import ClassSchedule from "@/components/classSchedule/ClassSchedule";
 import QuickLinks from "@/components/quickLinks/QuickLinks";
-import ClassRecordings from "@/components/classRecordings/ClassRecording";
+import ClassRecordings from "@/components/classRecordings/ClassRecordings";
 import { ClassRecording } from "@/components/classRecordings/ClassRecordings.types";
 
 const MainContent = () => {
-  // Sample data for class recordings
   const classRecordings: ClassRecording[] = [
     {
-      id: 1,
-      title: 'Algebraic Equations',
-      date: '24th October, 2024',
-      videoUrl: '/videos/algebraic_equations.mp4',
+      title: "Class 7 Math",
+      topic: "Algebraic Equations",
+      date: "24th October, 2024",
+      titleColor: "text-[#4749B3]",
+      topicColor: "text-black",
+      hoverTitleColor: "text-[#A3A4D9]",
+      hoverTopicColor: "text-[#4749B3]",
     },
     {
-      id: 2,
-      title: 'Geometry Basics',
-      date: '25th October, 2024',
-      videoUrl: '/videos/geometry_basics.mp4',
+      title: "Class 7 Math",
+      topic: "Inert Gases",
+      date: "24th October, 2024",
+      titleColor: "text-[#4749B3]",
+      topicColor: "text-black",
+      hoverTitleColor: "text-[#A3A4D9]",
+      hoverTopicColor: "text-[#4749B3]",
     },
-    // Add more recordings as needed
+    {
+      title: "Class 7 Science",
+      topic: "Fundamentals of Organic Chemistry",
+      date: "24th October, 2024",
+      titleColor: "text-[#E66DFF]",
+      topicColor: "text-black",
+      hoverTitleColor: "text-[#f5c8ff]",
+      hoverTopicColor: "text-[#E66DFF]",
+    },
+    {
+      title: "Class 7 Math",
+      topic: "Trigonometry 101",
+      date: "24th October, 2024",
+      titleColor: "text-[#4749B3]",
+      topicColor: "text-black",
+      hoverTitleColor: "text-[#A3A4D9]",
+      hoverTopicColor: "text-[#4749B3]",
+    },
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-8 pl-20 py-10 font-outfit"> {/* Maintained original gap value for columns */}
-      <div className="space-y-4"> {/* Space for Announcements and Class Schedule */}
+    <div className="grid grid-cols-3 gap-8 pl-20 py-10 font-outfit">
+      <div className="space-y-4">
         <Announcements />
         <ClassSchedule />
       </div>
-      <div className="space-y-4 w-[370px]"> {/* Added pr-2 to Quick Links for reduced right padding */}
+      <div className="space-y-4 w-[370px]">
         <QuickLinks />
       </div>
-      <div className="space-y-4"> {/* Space for Class Recordings */}
-        <ClassRecordings /> 
+      <div className="space-y-4">
+        <ClassRecordings classRecordings={classRecordings} />
       </div>
     </div>
   );
