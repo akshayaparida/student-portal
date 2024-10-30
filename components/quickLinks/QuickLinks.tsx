@@ -1,6 +1,11 @@
 "use client";
 
+import { useState } from "react";
+import Modal from './modal'; // Ensure this Modal component uses `isOpen` and `onClose` props correctly
+
 const QuickLinks = () => {
+  const [isModalOpen, setModalOpen] = useState(false); // Initialize with `false` to prevent automatic popup
+
   const links = [
     {
       id: 1,
@@ -123,9 +128,10 @@ const QuickLinks = () => {
     },
   ];
 
+
   return (
     <div>
-      <h2 className="font-outfit text-2xl font-bold text-black mb-8 w-[170px] h-[17px] rounded-[8px]   ">Quick Links</h2>
+      <h2 className="font-outfit text-2xl font-bold text-black mb-8 w-[170px] h-[17px] rounded-[8px]">Quick Links</h2>
       <div className="grid grid-cols-1 gap-4">
         {links.map((link) => (
           <div
@@ -133,6 +139,7 @@ const QuickLinks = () => {
             className={`transition-all duration-300 overflow-hidden ${link.color} rounded-[20px] w-[346px] h-[170px] hover:bg-white group 
               ${link.id === 1 ? 'hover:border-[1px] hover:border-solid hover:border-[#4749B31A]' : 
                link.id === 2 || link.id === 3 ? 'hover:border-[1px] hover:border-solid hover:border-[#6669FE1A]' : ''}`}
+            onClick={link.id === 2 ? () => setModalOpen(true) : undefined} // Open modal for "Join Live Class"
           >
             <div className="flex flex-col items-center justify-center h-full">
               {link.icon}
@@ -143,7 +150,7 @@ const QuickLinks = () => {
                 {link.title}
               </h3>
               <p 
-                className={`text-center w-[223px] h-[21px] text-[11px] leading-[11.88px] font-outfit font-normal 
+                className={`text-center w-[223px] h-[21px] text-[11px] leading-[11.88px] font-outfit 
                   ${link.id === 2 ? 'text-white group-hover:text-[#E66DFF] group-hover:transition-colors duration-300' : 'text-white group-hover:text-[#4749B3]'}`}
               >
                 {link.description}
@@ -152,9 +159,15 @@ const QuickLinks = () => {
           </div>
         ))}
       </div>
+
+      {/* Modal component with `isOpen` and `onClose` props */}
+      <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+        <div>
+     
+        </div>
+      </Modal>
     </div>
   );
-  
 };
 
 export default QuickLinks;
