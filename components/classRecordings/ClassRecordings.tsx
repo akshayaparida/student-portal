@@ -1,7 +1,9 @@
-"use client";
+"use client"; // Ensure this is a client component
+
 import React, { useState } from "react";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/ui/input"; // Adjust if necessary
 import Image from "next/image";
+import VideoPlayerModal from "./VideoPlayerModal"; // Ensure correct path
 import { ClassRecording } from "@/components/classRecordings/ClassRecordings.types";
 
 interface ClassRecordingsProps {
@@ -11,6 +13,18 @@ interface ClassRecordingsProps {
 const ClassRecordings: React.FC<ClassRecordingsProps> = ({ classRecordings }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedRecording, setSelectedRecording] = useState<ClassRecording | null>(null);
+
+  const handlePlayNowClick = (recording: ClassRecording) => {
+    setSelectedRecording(recording);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedRecording(null);
+  };
 
   return (
     <div className="flex flex-col items-start -ml-12">
@@ -67,6 +81,7 @@ const ClassRecordings: React.FC<ClassRecordingsProps> = ({ classRecordings }) =>
             className="w-[322px] h-[95px] border-b-[0.5px] border-b-[#0000001A] flex items-center justify-between transition-colors duration-150 group hover:border-b-[#4749B3] cursor-pointer"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
+            onClick={() => handlePlayNowClick(recording)} // Open modal on click
           >
             <div className="flex flex-col px-0">
               <p className={`text-xs font-semibold ${hoveredIndex === index ? recording.hoverTitleColor : recording.titleColor} transition-colors duration-150 mt-[1px]`}>
@@ -102,6 +117,13 @@ const ClassRecordings: React.FC<ClassRecordingsProps> = ({ classRecordings }) =>
           </div>
         ))}
       </div>
+      {isModalOpen && selectedRecording && (
+        <VideoPlayerModal
+          onClose={handleCloseModal}
+          className={selectedRecording.title} // Pass the class name dynamically
+          subject={selectedRecording.topic} // Pass the subject name dynamically
+        />
+      )}
     </div>
   );
 };
