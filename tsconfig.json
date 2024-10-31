@@ -8,7 +8,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node", // changed to "node" for compatibility
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -28,8 +28,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "components/ui/**/*.tsx",  // Adjusted path to include all .tsx files in ui folder
-    "components/shadcn-ui.d.ts"
+    "components/ui/**/*.tsx",
+    "components/shadcn-ui.d.ts",
+    "declarations.d.ts" // Add this line to include your declaration file
   ],
   "exclude": ["node_modules"]
 }
