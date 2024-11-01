@@ -62,19 +62,18 @@ const ClassSchedule = () => {
   return (
     <div className="mb-4">
       <h2 className="text-xl font-bold mb-4">Your Class Schedule</h2>
-      <div className="bg-white p-4 shadow-md rounded-[20px] border-gray-300 w-[394px] h-[328px] flex flex-col gap-4">
+      <div className="bg-white p-4 shadow-md rounded-[20px] border-gray-300 w-[394px] h-[328px] flex flex-col gap-4 max-sm:w-80 max-sm:h-40">
         {classSchedules.map((schedule) => (
           <div
-            key={schedule.id}
-            className="flex justify-between items-center border-b pb-4"
-            style={{
-              width: "354px",
-              height: "60px",
-              padding: "16px",
-              borderRadius: "4px",
-              background: schedule.bgColor,
-            }}
-          >
+  key={schedule.id}
+  className="flex justify-between items-center border-b pb-4 max-sm:w-72 max-sm:h-14 w-[354px] h-[60px] p-4 rounded"
+  style={{ backgroundColor: schedule.bgColor }}
+>
+
+
+    
+   
+   
             {/* Left Section with Icon and Text */}
             <div className="flex items-start gap-2">
               <Image

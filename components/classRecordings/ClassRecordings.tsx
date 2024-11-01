@@ -31,7 +31,7 @@ const ClassRecordings: React.FC<ClassRecordingsProps> = ({ classRecordings }) =>
       <h2 className="text-2xl font-bold leading-[23.76px] mb-6">
         Access Class Recordings
       </h2>
-      <div className="bg-white rounded-[20px] p-6 shadow-md w-[371px] h-[540px] flex flex-col gap-0">
+      <div className="bg-white rounded-[20px] p-6 shadow-md md:w-[371px] md:h-[540px] flex flex-col gap-0  max-sm:w-80 max-sm:h-full">
         <div className="relative mb-4">
           <Input
             type="text"
@@ -78,7 +78,7 @@ const ClassRecordings: React.FC<ClassRecordingsProps> = ({ classRecordings }) =>
         {classRecordings.map((recording, index) => (
           <div
             key={index}
-            className="w-[322px] h-[95px] border-b-[0.5px] border-b-[#0000001A] flex items-center justify-between transition-colors duration-150 group hover:border-b-[#4749B3] cursor-pointer"
+            className="md:w-[322px] md:h-[95px] border-b-[0.5px] border-b-[#0000001A] flex items-center justify-between transition-colors duration-150 group hover:border-b-[#4749B3] cursor-pointer max-sm:w-72 max-sm:h-16"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             onClick={() => handlePlayNowClick(recording)} // Open modal on click

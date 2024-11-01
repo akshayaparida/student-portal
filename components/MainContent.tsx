@@ -7,7 +7,7 @@ import QuickLinks from "@/components/quickLinks/QuickLinks";
 import ClassRecordings from "@/components/classRecordings/ClassRecordings";
 import Popup from "@/components/Popup";
 import { ClassRecording } from "@/components/classRecordings/ClassRecordings.types";
-import { BellIcon } from "@heroicons/react/outline"; // Ensure you're using the correct version
+import { BellIcon } from "@heroicons/react/outline"; 
 
 const MainContent = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -68,29 +68,43 @@ const MainContent = () => {
   const closePopup = () => {
     setShowPopup(false);
     // Optionally, you can update the message or additional info when closing the popup
-    setPopupMessage("Class has ended. Thank you for attending!"); // Example update
-    setAdditionalInfo("Check the recordings for missed classes."); // Example update
+    setPopupMessage("Class has ended. Thank you for attending!"); 
+    setAdditionalInfo("Check the recordings for missed classes."); 
 
     // Set a timeout to show the popup again after 30 minutes
     setTimeout(() => setShowPopup(true), 30 * 60 * 1000); // 30 minutes in milliseconds
   };
 
   return (
-    <div className="relative grid grid-cols-3 gap-8 pl-20 py-10 font-outfit">
+    <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 py-10 font-outfit">
       {/* Left Column: Announcements and Class Schedule */}
-      <div className="space-y-4">
-        <Announcements />
-        <ClassSchedule />
+      <div className="flex flex-col items-center md:items-start space-y-4 mx-auto">
+        <div className="w-full md:w-auto">
+          <Announcements />
+        </div>
+        
+        {/* Quick Links only appears after Announcements on mobile */}
+        <div className="w-full md:w-auto md:hidden">
+          <QuickLinks />
+        </div>
+
+        <div className="w-full md:w-auto">
+          <ClassSchedule />
+        </div>
       </div>
 
-      {/* Center Column: Quick Links */}
-      <div className="space-y-4 w-[370px]">
-        <QuickLinks />
+      {/* Center Column: Quick Links (only for larger screens) */}
+      <div className="hidden md:flex flex-col items-center md:items-start space-y-4 mx-auto">
+        <div className="w-full md:w-auto">
+          <QuickLinks />
+        </div>
       </div>
 
       {/* Right Column: Class Recordings */}
-      <div className="space-y-4">
-        <ClassRecordings classRecordings={classRecordings} />
+      <div className="flex flex-col items-center md:items-start space-y-4 mx-auto">
+        <div className="w-full md:w-auto">
+          <ClassRecordings classRecordings={classRecordings} />
+        </div>
       </div>
 
       {/* Notification Icon on the right side */}

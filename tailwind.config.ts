@@ -1,4 +1,3 @@
-// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -10,10 +9,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        scrollRightToLeft: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        scrollRightToLeft: 'scrollRightToLeft 10s linear infinite', // Slower scrolling for better readability
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        border: 'hsl(var(--border))', // Custom border color
+        border: 'hsl(var(--border))',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
@@ -69,10 +77,6 @@ const config: Config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
-
-   
-
-
     },
   },
   plugins: [require("tailwindcss-animate")],
