@@ -17,7 +17,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         className="absolute inset-0 bg-[#6a6a6a] opacity-40"
         onClick={onClose} // Close modal when overlay is clicked
       ></div>
-      <div className="bg-[#6F6F6F] w-[346px] h-[170px] rounded-[20px] shadow-md relative border border-[#6669FE1A] flex flex-col items-center justify-center">
+      <div className="bg-[#6F6F6F] w-[346px] h-[170px]    max-sm:w-[260px]      rounded-[20px] shadow-md relative border border-[#6669FE1A] flex flex-col items-center justify-center">
         
         <div className="p-4 flex flex-col items-center text-[#FFFFFF]">
           <Image 

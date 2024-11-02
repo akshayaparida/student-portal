@@ -17,13 +17,13 @@ const Header = () => {
             </Link>
 
           
-            <h1 className="text-white font-bold text-[20px] md:text-[32px] leading-[31.68px] mb-1 flex-grow text-center">
+            <h1 className="text-white font-bold text-[20px] md:text-[32px] leading-[31.68px] mb-1 flex-grow text-center    max-sm:text-right       ">
                 Student Portal
             </h1>
 
             {/* User Information on Medium and Larger Devices */}
             <div className="hidden md:flex flex-col items-end text-right">
-                <span className="text-white text-[14px] font-semibold leading-[22px]">
+                <span className="text-white text-[24px] font-semibold leading-[30px]">
                     Hello, Gabrisa!
                 </span>
                 <span className="text-white text-[12px] font-normal leading-[15px]">

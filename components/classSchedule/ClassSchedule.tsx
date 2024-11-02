@@ -1,9 +1,10 @@
-// components/classSchedule/ClassSchedule.tsx
+"use client";
 
-import { ClassScheduleItem } from "./ClassSchedule.types";
+import { FC } from "react";
 import Image from 'next/image';
+import { ClassScheduleItem } from "./ClassSchedule.types";
 
-const ClassSchedule = () => {
+const ClassSchedule: FC = () => {
   const classSchedules: ClassScheduleItem[] = [
     {
       id: 1,
@@ -16,7 +17,7 @@ const ClassSchedule = () => {
       textColor: "#9899DF",
       dateTimeColor: "#4749B3",
       rightTextColor: "#7577D9",
-      icon: "/videoicon1.svg", // Use a relative path from the public folder
+      icon: "/videoicon1.svg",
     },
     {
       id: 2,
@@ -61,37 +62,32 @@ const ClassSchedule = () => {
 
   return (
     <div className="mb-4">
-      <h2 className="text-xl font-bold mb-4">Your Class Schedule</h2>
-      <div className="bg-white p-4 shadow-md rounded-[20px] border-gray-300 w-[394px] h-[328px] flex flex-col gap-4 max-sm:w-80 max-sm:h-40">
+      <h2 className="text-2xl max-sm:text-[20px] font-bold mb-4">Your Class Schedule</h2>
+      <div className="bg-white p-4 shadow-md rounded-[20px] border-gray-300 w-[394px] h-[328px] flex flex-col gap-4 max-sm:w-80 max-sm:rounded-[12px] ">
         {classSchedules.map((schedule) => (
           <div
-  key={schedule.id}
-  className="flex justify-between items-center border-b pb-4 max-sm:w-72 max-sm:h-14 w-[354px] h-[60px] p-4 rounded"
-  style={{ backgroundColor: schedule.bgColor }}
->
-
-
-    
-   
-   
+            key={schedule.id}
+            className="flex justify-between items-center border-b pb-4 w-[354px] h-[60px] p-4 rounded   max-sm:w-[296px]    "
+            style={{ backgroundColor: schedule.bgColor }}
+          >
             {/* Left Section with Icon and Text */}
             <div className="flex items-start gap-2">
               <Image
                 src={schedule.icon}
                 alt={`${schedule.title} icon`}
-                width={32} // Matching the `w-8 h-8` Tailwind sizing
+                width={32} // Adjust as needed
                 height={32}
-                style={{ color: schedule.textColor }} // Set custom color for icon if needed
+                className="h-8 w-8" // Adjust size for max-sm if needed
               />
               <div>
                 <p
-                  className="font-outfit text-custom-small font-light leading-custom-small text-left"
+                  className="font-outfit text-custom-small font-light leading-custom-small text-left  max-sm:text-[10px]  "
                   style={{ color: schedule.textColor }}
                 >
                   {schedule.title}, {schedule.subject} | Live Class
                 </p>
                 <p
-                  className="font-outfit text-custom-medium font-semibold leading-custom-medium text-left"
+                  className="font-outfit text-custom-medium font-semibold leading-custom-medium text-left  max-sm:text-[12px] "
                   style={{ color: schedule.dateTimeColor }}
                 >
                   {schedule.date}, {schedule.time}
@@ -100,7 +96,7 @@ const ClassSchedule = () => {
             </div>
             {/* Right Text Section */}
             <div
-              className="flex items-center justify-center text-[10px]"
+              className="flex items-center justify-center text-[10px]  max-sm:text-[8px]    "
               style={{ color: schedule.rightTextColor }}
             >
               {schedule.rightText}

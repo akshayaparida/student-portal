@@ -27,11 +27,11 @@ const ClassRecordings: React.FC<ClassRecordingsProps> = ({ classRecordings }) =>
   };
 
   return (
-    <div className="flex flex-col items-start -ml-12">
-      <h2 className="text-2xl font-bold leading-[23.76px] mb-6">
+    <div className="flex flex-col items-start ">
+      <h2 className="text-2xl    max-sm:text-[20px]  font-bold leading-[23.76px] mb-6">
         Access Class Recordings
       </h2>
-      <div className="bg-white rounded-[20px] p-6 shadow-md md:w-[371px] md:h-[540px] flex flex-col gap-0  max-sm:w-80 max-sm:h-full">
+      <div className="bg-white rounded-[20px] p-6 shadow-md md:w-[371px] md:h-[540px] flex flex-col gap-0  max-sm:w-80 max-sm:h-full     ">
         <div className="relative mb-4">
           <Input
             type="text"
@@ -78,37 +78,38 @@ const ClassRecordings: React.FC<ClassRecordingsProps> = ({ classRecordings }) =>
         {classRecordings.map((recording, index) => (
           <div
             key={index}
-            className="md:w-[322px] md:h-[95px] border-b-[0.5px] border-b-[#0000001A] flex items-center justify-between transition-colors duration-150 group hover:border-b-[#4749B3] cursor-pointer max-sm:w-72 max-sm:h-16"
+            className="md:w-[322px] md:h-[95px] border-b-[0.5px] border-b-[#0000001A] flex items-center justify-between transition-colors duration-150 group hover:border-b-[#4749B3] cursor-pointer max-sm:w-72 "
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             onClick={() => handlePlayNowClick(recording)} // Open modal on click
           >
             <div className="flex flex-col px-0">
-              <p className={`text-xs font-semibold ${hoveredIndex === index ? recording.hoverTitleColor : recording.titleColor} transition-colors duration-150 mt-[1px]`}>
+              <p className={`text-xs font-semibold ${hoveredIndex === index ? recording.hoverTitleColor : recording.titleColor} transition-colors duration-150 mt-[1px]  max-sm:text-[10px]      `}>
                 {recording.title}
               </p>
-              <h3 className={`w-[160px] h-[11px] text-[16px] text-left font-bold ${hoveredIndex === index ? recording.hoverTopicColor : recording.topicColor} leading-[19px] font-outfit mb-9 m-0 transition-colors duration-150`}>
+              <h3 className={`w-[160px] h-[11px] text-[16px] text-left font-bold ${hoveredIndex === index ? recording.hoverTopicColor : recording.topicColor} leading-[19px] font-outfit mb-9    m-0 transition-colors duration-150`}>
                 {recording.topic}
               </h3>
-              <p className="w-[100px] h-[7px] text-left font-normal text-[#727272] text-[10px] leading-[9.9px] font-outfit mt-0 mb-1">
+              <p className="w-[100px] h-[7px] text-left font-normal text-[#727272] text-[10px] leading-[9.9px] font-outfit mt-0 mb-1  max-sm:mb-4   ">
                 {recording.date}
               </p>
             </div>
-            <div className="relative w-[100px] h-[64px] flex items-center justify-center transition-colors duration-150 group hover:bg-[#4749B3] rounded-[4px_0px_0px_0px]">
+            <div className="relative w-[100px] h-[64px]     flex items-center justify-center transition-colors duration-150 group hover:bg-[#4749B3] rounded-[4px_0px_0px_0px]">
               <Image
                 src="/mask-group.svg"
                 alt="Video Background"
                 width={100}
                 height={64}
-                className="rounded-[4px_0px_0px_0px]"
+                className="rounded-[4px_0px_0px_0px]     max-sm:h-[50px]     "
                 priority={index < 2}
+            
               />
               <Image
                 src="/video-circle.svg"
                 alt="Play Icon"
                 width={24}
                 height={24}
-                className="absolute group-hover:hidden"
+                className="absolute group-hover:hidden   max-sm:h-[19px]   "
               />
               <span className="absolute hidden group-hover:flex items-center justify-center text-xs font-medium text-[#FFFFFF]">
                 Play Now

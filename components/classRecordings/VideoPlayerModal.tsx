@@ -11,8 +11,8 @@ interface VideoPlayerModalProps {
 
 const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({ onClose, className, subject }) => {
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 font-outfit " >
-      <div className="bg-[#4749B3] rounded-[28px] p-0 relative w-[50rem] ">
+    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 font-outfit  " >
+      <div className="bg-[#4749B3] rounded-[28px] p-0 relative w-[50rem]    max-sm:w-[340px]  ">
         
         {/* Blue Header Div */}
         <div className="bg-[#4749B3] text-white rounded-t-lg flex items-center justify-between p-4 h-[60px]  ">
