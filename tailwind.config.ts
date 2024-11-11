@@ -19,6 +19,7 @@ const config: Config = {
         scrollRightToLeft: 'scrollRightToLeft 10s linear infinite', // Slower scrolling for better readability
       },
       colors: {
+        containerBg: '#6669FE',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         border: 'hsl(var(--border))',

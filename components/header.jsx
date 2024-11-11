@@ -4,16 +4,17 @@ import Link from "next/link";
 
 const Header = () => {
     return (
-        <nav className="mx-auto py-6 px-4 sm:px-16 w-auto h-auto bg-[#6669FE] flex justify-between items-center font-outfit">
+        <nav className="mx-auto py-6 px-4 sm:px-16 w-auto h-auto bg-containerBg flex justify-between items-center font-outfit">
             
             <Link href={"/"} className="flex items-center">
-                <Image
-                    src="/logo.svg"
-                    width={96.6}
-                    height={49.03}
-                    alt="connectED logo"
-                    className="h-14 w-auto"
-                />
+            <Image
+        src="/logo.svg"
+        alt="connectED logo"
+        width={100} // Adjust to general dimensions for improved clarity
+        height={50}
+        priority
+        className="h-14 w-auto"
+    />
             </Link>
 
           
@@ -23,13 +24,14 @@ const Header = () => {
 
             {/* User Information on Medium and Larger Devices */}
             <div className="hidden md:flex flex-col items-end text-right">
-                <span className="text-white text-[24px] font-semibold leading-[30px]">
-                    Hello, Gabrisa!
-                </span>
-                <span className="text-white text-[12px] font-normal leading-[15px]">
-                    Class 7, Math + Science
-                </span>
-            </div>
+    <span className="text-white text-lg font-semibold">
+        Hello, Gabrisa!
+    </span>
+    <span className="text-white text-sm font-normal">
+        Class 7, Math + Science
+    </span>
+</div>
+
         </nav>
     );
 };
